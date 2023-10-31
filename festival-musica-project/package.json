@@ -1,0 +1,25 @@
+{
+  "name": "festival-musica",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sass": "sass --watch src/sass:build/css",
+    "css": "gulp css",
+    "devs": "gulp dev"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.69.3",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "global": "^4.4.0",
+    "gulp-cli": "^2.3.0"
+  }
+}

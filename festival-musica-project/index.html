@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Googole fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link css -->
+    <link rel="stylesheet" href="./build/css/app.css">
+    <title>Festival de musica</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__content">
+            <h1 class="header__content-title">Rock & EDM Festival</h1>
+            <nav class="header__content-nav">
+                <a class="nav__link" href="#">Line Up</a>
+                <a class="nav__link" href="#">Galería</a>
+                <a class="nav__link" href="#">Boletos</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="video">
+        <div class="video__overlay">
+            <div class="video__content container">
+                <h2 class="video__content-title">Rock & EDM Festival</h2>
+                <p class="video__content-date">Julio 2022, Guadalajara, México.</p>
+            </div>
+        </div>
+        <video autoplay muted loop class="video__video">
+            <source src="./src/video/concierto.mp4" type="video/mp4">
+            <source src="./src/video/concierto.ogg" type="video/ogg">
+            <source src="./src/video/concierto.webm" type="video/webm">
+        </video>
+    </div>
+
+    <section class="about-section container" id="about">
+        <div class="about-section__image">
+            <img src="./src/img/imagen_vocalista.jpg" alt="">
+        </div>
+        <div class="about-section__content">
+            <h2 class="about-section__content-title">Rock & EDM Festival</h2>
+            <p class="about-section__content-date">Julio 2022, Guadalajara, México</p>
+            <p class="about-section__content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor expedita nulla
+                dignissimos repellendus
+                corporis excepturi enim eum? Tenetur rerum excepturi natus dicta ullam sit, fuga asperiores maxime
+                distinctio rem doloremque?</p>
+        </div>
+    </section>
+
+    <section class="lineup-section" id="line-up">
+        <div class="contenedor">
+            <h2 class="lineup-section__title">Line Up</h2>
+            <div class="lineup-section__event-group">
+                <p class="event-group__day">viernes 21</p>
+                <article class="event-group__article">
+                    <div class="article__header">
+                        <p class="article__header-name">Escenario Rock</p>
+                        <i class="article__header-icon"></i>
+                    </div>
+                    <div class="article__body">
+                        <ul class="article__body-list">
+                            <li class="article__body-list__item"><b>24:00 |</b> Metallica</li>
+                            <li class="article__body-list__item"><b>22:00 |</b> Pearl Jam</li>
+                            <li class="article__body-list__item"><b>20:00 |</b> KoRn</li>
+                            <li class="article__body-list__item"><b>19:00 |</b> Muse</li>
+                            <li class="article__body-list__item"><b>18:00 |</b> Breaking Benjamin</li>
+                            <li class="article__body-list__item"><b>17:00 |</b> 30 Seconds to Mars</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="contenedor galery" id="galery">
+        <h2>Galeria</h2>
+        <div class="galery__">
+            <img src="./src/img/thumb/1.jpg" alt="">
+        </div>
+        <div class="galery__">
+            <img src="./src/img/thumb/2.jpg" alt="">
+        </div>
+        <div class="galery__">
+            <img src="./src/img/thumb/3.jpg" alt="">
+        </div>
+        <div class="galery__">
+            <img src="./src/img/thumb/4.jpg" alt="">
+        </div>
+        <div class="galery__">
+            <img src="./src/img/thumb/5.jpg" alt="">
+        </div>
+        <div class="galery__">
+            <img src="./src/img/thumb/6.jpg" alt="">
+        </div>
+        <div class="galery__">
+            <img src="./src/img/thumb/7.jpg" alt="">
+        </div>
+        <div class="galery__">
+            <img src="./src/img/thumb/8.jpg" alt="">
+        </div>
+        <div class="galery__">
+            <img src="./src/img/thumb/9.jpg" alt="">
+        </div>
+        <div class="galery__">
+            <img src="./src/img/thumb/10.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="contenedor boletos" id="boletos">
+        <h2>Boletos</h2>
+        <p>Pase 1 Dia</p>
+        <article class="boletos__article">
+            <p class="boletos__title">Incluye</p>
+            <p>Acceso a ambos escenarios</p>
+            <p>Comida y Bebida</p>
+            <p class="boletos__footer">$100</p>
+        </article>
+        <p>Pase 2 Dias</p>
+        <article class="boletos__article">
+            <p class="boletos__title">Incluye</p>
+            <p>Acceso a ambos escenarios</p>
+            <p>Comida y Bebida</p>
+            <p>Camisa del Evento</p>
+            <p>Acceso VIP</p>
+            <p class="boletos__footer">$180</p>
+        </article>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="contenedor">
+            <p>Rock & EDM Festival. Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+
+</html>

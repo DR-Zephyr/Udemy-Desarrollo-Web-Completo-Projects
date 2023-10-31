@@ -1,0 +1,30 @@
+@use '../base/variables' as v;
+
+.about-section {
+    padding: 5rem 0;
+
+    &__image {
+        display: block;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 5rem;
+
+        &-title {
+            margin-bottom: 2rem;
+        }
+
+        &-date {
+            font-weight: bold;
+            color: v.$rosa;
+            margin: 2rem 0 4rem;
+        }
+
+        &-text {
+            line-height: 1.5;
+        }
+    }
+}

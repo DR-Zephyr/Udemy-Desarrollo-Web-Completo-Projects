@@ -1,0 +1,28 @@
+//==========Header Styles++++++++++//
+@use '../base/variables' as v;
+
+.header {
+    background-color: v.$verde;
+}
+
+.header__content {
+    padding: 2rem;
+
+    &-title {
+        color: v.$blanco;
+        text-align: center;
+        line-height: 4.6rem;
+    }
+}
+
+.nav__link {
+    color: v.$blanco;
+    display: block;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+
+    &:hover {
+        color: v.$amarillo;
+    }
+}
