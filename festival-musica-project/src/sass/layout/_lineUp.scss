@@ -36,6 +36,31 @@
     }
 }
 
+.article__header {
+    margin-block: 2rem;
+
+    &-name {
+        &::after {
+            content: '';
+            display: block;
+            width: 20rem;
+            height: 10rem;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 2rem auto 0 auto;
+        }
+    }
+}
+
+.rock::after {
+    background-image: url('../img/icono_rock.png');
+}
+
+.edm::after{
+    background-image: url('../img/icono_edm.png');
+}
+
 .article__body-list {
     list-style: none;
     display: flex;
@@ -53,8 +78,4 @@
             background-color: #fdee21;
         }
     }
-}
-
-.article__header {
-    margin-block: 2rem;
 }
