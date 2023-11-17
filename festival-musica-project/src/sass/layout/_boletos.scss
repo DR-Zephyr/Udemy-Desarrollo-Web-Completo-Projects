@@ -1,0 +1,42 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.boletos {
+    padding-block: 5rem;
+    text-align: center;
+    color: white;
+
+    h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .pass-name {
+        margin-block: 2.8rem;
+        font-size: 2.8rem;
+        color: white;
+    }
+
+    &__title {
+        background-color: v.$rosa;
+        padding: 5px;
+        color: white;
+    }
+
+    &__list {
+        .list-item {
+            padding: 10px;
+            background-color: white;
+            color: black;
+            text-align: start;
+        }
+    }
+
+    &__footer {
+        background-color: v.$morado;
+        color: white;
+        font-weight: bold;
+        padding: 0.5rem;
+    }
+}

@@ -26,7 +26,6 @@
 
     &--green {
         background-color: v.$verde;
-
         .article__body-list__item {
             &:nth-child(odd) {
                 /* Estilos para elementos pares */
@@ -52,7 +51,6 @@
         }
     }
 }
-
 .rock::after {
     background-image: url('../img/icono_rock.png');
 }

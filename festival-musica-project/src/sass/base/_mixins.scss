@@ -1,0 +1,41 @@
+@mixin responsive($breakpoint) {
+    @if $breakpoint == 'small' {
+        @media (max-width: 599px) {
+            @content;
+        }
+    } @else if $breakpoint == 'medium' {
+        @media (min-width: 600px) and (max-width: 1023px) {
+            @content;
+        }
+    } @else if $breakpoint == 'large' {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    } @else if $breakpoint == 'xlarge' {
+        @media (min-width: 1440px) {
+            @content;
+        }
+    } @else {
+        @media ($breakpoint) {
+            @content;
+        }
+    }
+}
+
+@mixin resetear-lista {
+    margin: 0;
+    pad: 0;
+    list-style: none;
+}
+
+@mixin grid($columns, $column-width: 1fr, $gap: 2rem) {
+    display: grid;
+    grid-template-columns: repeat($columns, $column-width);
+    gap: $gap;
+    width: 100%;
+}
+
+@mixin grid-item($col-span: 1, $row-span: 1) {
+    grid-column: span $col-span;
+    grid-row: span $row-span;
+}
