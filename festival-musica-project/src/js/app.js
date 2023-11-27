@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initalizeApp() {
     createGalery();
+    window.onscroll = function () {
+        scrollFunction();
+    };
 }
 
 function createGalery() {
@@ -38,13 +41,31 @@ function showImage(id) {
 
     const closeBtn = document.createElement('p');
     closeBtn.textContent = 'X';
-    closeBtn.classList.add('btn-close')
-    closeBtn.onclick = function (){
+    closeBtn.classList.add('btn-close');
+    closeBtn.onclick = function () {
         overlay.remove();
         document.body.classList.remove('fixed-body');
-    }
+    };
 
     overlay.appendChild(image);
     overlay.appendChild(closeBtn);
     document.body.appendChild(overlay);
+}
+
+// Cuando el usuario se desplaza hacia abajo 20px desde la parte superior del documento, muestra el botón
+function scrollFunction() {
+    if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+    ) {
+        document.getElementById('myBtn').style.display = 'block';
+    } else {
+        document.getElementById('myBtn').style.display = 'none';
+    }
+}
+
+// Cuando el usuario hace clic en el botón, se desplaza hacia la parte superior del documento
+function topFunction() {
+    document.body.scrollTop = 0; // Para Safari
+    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
 }
