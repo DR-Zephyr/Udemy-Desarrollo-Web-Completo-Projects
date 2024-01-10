@@ -5,11 +5,11 @@
 *::after {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 html {
     font-size: 62.5%;
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
 }
 body {
     font-family: v.$fuente-principal;

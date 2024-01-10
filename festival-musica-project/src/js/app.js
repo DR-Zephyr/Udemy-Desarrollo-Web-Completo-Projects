@@ -1,12 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-    initalizeApp();
-});
-
-function initalizeApp() {
     createGalery();
+    scrollNav();
+
     window.onscroll = function () {
         scrollFunction();
     };
+});
+
+function scrollNav() {
+    const links = document.querySelectorAll('.nav__link');
+    links.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const id = link.hash;
+            const element = document.querySelector(id);
+            element.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+}
+// Cuando el usuario se desplaza hacia abajo 20px desde la parte superior del documento, muestra el botón
+function scrollFunction() {
+    if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+    ) {
+        document.getElementById('myBtn').style.display = 'block';
+    } else {
+        document.getElementById('myBtn').style.display = 'none';
+    }
 }
 
 function createGalery() {
@@ -52,20 +73,7 @@ function showImage(id) {
     document.body.appendChild(overlay);
 }
 
-// Cuando el usuario se desplaza hacia abajo 20px desde la parte superior del documento, muestra el botón
-function scrollFunction() {
-    if (
-        document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20
-    ) {
-        document.getElementById('myBtn').style.display = 'block';
-    } else {
-        document.getElementById('myBtn').style.display = 'none';
-    }
-}
 
-// Cuando el usuario hace clic en el botón, se desplaza hacia la parte superior del documento
-function topFunction() {
-    document.body.scrollTop = 0; // Para Safari
-    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
+function topFunction(event) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }

@@ -1,32 +1,54 @@
 @use '../base/variables' as v;
+@use '../base/mixins' as m;
 
-.about-section {
+.about-section
+{
     padding: 5rem 0;
     margin-bottom: 5.4rem;
 
-    &__image {
+    &__image
+    {
         display: block;
     }
 
-    &__content {
+    &__content
+    {
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin-top: 5rem;
 
-        &-title {
+        &-title
+        {
             margin-bottom: 2rem;
         }
 
-        &-date {
+        &-date
+        {
             font-weight: bold;
             color: v.$rosa;
             margin: 2rem 0 4rem;
         }
 
-        &-text {
+        &-text
+        {
             line-height: 1.5;
             margin-bottom: 2rem;
+        }
+    }
+}
+
+@include m.responsive('large')
+{
+    .about-section
+    {
+        display: flex;
+        justify-content: space-between;
+        gap: 5rem;
+
+        &>*
+        {
+            flex-basis: 50%;
         }
     }
 }

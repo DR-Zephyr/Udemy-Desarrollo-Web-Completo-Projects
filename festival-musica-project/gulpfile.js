@@ -1,6 +1,13 @@
 //++++++++++Css++++++++++//
 import * as sass from 'sass';
 import gulpSass from 'gulp-sass';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import postcss from 'gulp-postcss';
+import sourcemaps, { init } from 'gulp-sourcemaps';
+
+//==========js==========//
+import terser from 'gulp-terser-js';
 
 //++++++++++Gulp++++++++++//
 import gulp from 'gulp';
@@ -10,18 +17,25 @@ import plumber from 'gulp-plumber';
 import webp from 'gulp-webp';
 import cache from 'gulp-cache';
 import imagemin from 'gulp-imagemin';
-import avif from 'gulp-avif'
+import avif from 'gulp-avif';
 
 const dartSass = gulpSass(sass);
 const { src, dest, watch, parallel } = gulp;
 
-function css(done) {
+function modifyCss(done) {
     src('./src/sass/**/*.scss')
-        .pipe(plumber())
-        .pipe(dartSass())
-        .pipe(dest('./build/css'));
+        .pipe(sourcemaps.init()) // Initialize sourcemaps before compilation starts
+        .pipe(plumber()) // Prevent pipe breaking caused by errors from gulp plugins
+        .pipe(dartSass()) // Convert Sass to CSS with gulp-sass
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write('.')) // Now add/write the sourcemaps
+        .pipe(dest('./build/css')); // Output CSS files
 
     done();
+}
+
+function minifyJs() {
+    return src('./src/js/**/*.js').pipe(sourcemaps.init()).pipe(terser()).pipe(sourcemaps.write('.')).pipe(dest('./build/js'));
 }
 
 function lightImages(done) {
@@ -55,9 +69,16 @@ function versionAvif(done) {
     done();
 }
 
-function watcher(done) {
+export function watcher(done) {
     watch('./src/sass/**/*.scss', css);
     done();
 }
 
-export const dev = parallel(lightImages, versionWebp, versionAvif, watcher);
+export const dev = parallel(
+    lightImages,
+    versionWebp,
+    versionAvif,
+    watcher
+);
+export const js = minifyJs;
+export const css = modifyCss;

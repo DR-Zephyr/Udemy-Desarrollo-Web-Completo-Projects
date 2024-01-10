@@ -1,28 +1,64 @@
 //==========Header Styles++++++++++//
 @use '../base/variables' as v;
+@use '../base/mixins' as m;
 
-.header {
+.header
+{
     background-color: v.$verde;
 }
 
-.header__content {
+.header__content
+{
     padding: 2rem;
 
-    &-title {
+    &-title
+    {
         color: v.$blanco;
         text-align: center;
         line-height: 4.6rem;
     }
 }
 
-.nav__link {
+.nav__link
+{
     color: v.$blanco;
     display: block;
     font-size: 2.4rem;
     margin-bottom: 1rem;
     text-align: center;
 
-    &:hover {
+    &:hover
+    {
         color: v.$amarillo;
+    }
+}
+
+@include m.responsive('large')
+{
+    .header__content
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        padding-block: 2rem;
+
+        &-nav
+        {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-basis: 40%
+        }
+
+        &-title
+        {
+            margin: 0;
+        }
+    }
+
+    .nav__link
+    {
+        margin: 0;
     }
 }
